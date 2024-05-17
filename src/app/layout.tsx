@@ -10,8 +10,8 @@ import { ThemeProvider } from "@/lib/providers/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "stack",
-  description: "The tech stack for your next(.js) project.",
+  title: "sern Frontpage Bot",
+  description: "Show your sern bot in the sern.dev frontpage!",
 };
 
 export default async function RootLayout({

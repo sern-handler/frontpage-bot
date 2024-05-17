@@ -14,10 +14,11 @@ datasource db {
 }
 
 model User {
-  id       String    @id @default(cuid())
-  username String @unique
+  id              String    @id @default(cuid())
+  username        String    @unique
   hashed_password String
-  sessions Session[]
+  sessions        Session[]
+  bots            Bot[]
 }
 
 model Session {
@@ -25,4 +26,18 @@ model Session {
   userId    String
   expiresAt DateTime
   user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
+}
+
+model Bot {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(references: [id], fields: [userId], onDelete: Cascade)
+
+  name        String
+  description String
+  verified    Boolean @default(false)
+  inviteLink  String
+  pfpLink     String
+  srcLink     String?
+  botId       String
 }

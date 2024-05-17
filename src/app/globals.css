@@ -38,6 +38,7 @@
 
     .dark {
       --background: 240 21.053% 14.902%; /* base */
+      --background-darker: 220 23.077% 12%; /* base but darker */
       --foreground: 226.154 63.934% 88.039%; /* text */
 
       --muted: 236.842 16.239% 22.941%; /* surface0 */

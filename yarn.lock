@@ -740,6 +740,13 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.10.2.tgz#053f1540703faa81dea2966b768ee5581c66aeda"
   integrity sha512-hw437iINopmQuxWPSUEvqE56NCPsiU8N4AYtfHmJFckclktzK9YQJieD3XkDCDH4OjL+C7zgPUh73R/nrcHrqw==
 
+"@sern/poster@^1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@sern/poster/-/poster-1.2.6.tgz#64223181c984e5286901c74a71373d6313123994"
+  integrity sha512-9pmZ8gp7qzyItwGAEXkWxkukNBO2Z4db4Uvs/xjeJMuG1u5H0RSGWsCubUYVcTuDi9LxePXFQUWbXvpFjUSHqA==
+  dependencies:
+    squint-cljs latest
+
 "@swc/counter@^0.1.3":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@swc/counter/-/counter-0.1.3.tgz#cc7463bd02949611c6329596fccd2b0ec782b0e9"
@@ -2972,6 +2979,13 @@ source-map-js@^1.0.2, source-map-js@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.0.tgz#16b809c162517b5b8c3e7dcd315a2a5c2612b2af"
   integrity sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==
+
+squint-cljs@latest:
+  version "0.7.108"
+  resolved "https://registry.yarnpkg.com/squint-cljs/-/squint-cljs-0.7.108.tgz#f057e813ab644628f50b16f3b00335f79a571c6b"
+  integrity sha512-GHALQ+6EZEXzpygBHj7RSPi3evzIXIZXvv543zqhND4/26NhTNF5nnbg8InQPKp3heDg2PLZEO/VtFs+Sd1UHA==
+  dependencies:
+    chokidar "^3.5.3"
 
 streamsearch@^1.1.0:
   version "1.1.0"

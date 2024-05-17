@@ -18,8 +18,8 @@ import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher"
 
 export const links = [
   { href: '/', name: 'Home' },
-  { href: 'https://github.com/SrIzan10/stack', name: 'Github' },
-  { href: '/protected', name: 'Protected route' }
+  { href: '/dashboard', name: 'Dashboard' },
+  { href: '/add', name: 'Submit' },
 ]
 
 function NavbarLinks() {
@@ -41,7 +41,7 @@ export default function Navbar() {
     <>
       <nav className="flex items-center h-16 px-4 border-b gap-3 shrink-0">
         <Link href="/" className="hidden md:flex">
-          <Button>stack</Button>
+          <Button>sern Frontpage</Button>
         </Link>
         <MobileNavbarLinks />
         <div className="hidden md:flex">

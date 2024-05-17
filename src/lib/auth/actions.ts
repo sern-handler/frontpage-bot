@@ -87,6 +87,6 @@ export async function signup(prev: any, formData: FormData): Promise<ActionResul
 }
 
 interface ActionResult {
-    error: string | null;
-    success: boolean | null;
+    error: string;
+    success: boolean;
 }

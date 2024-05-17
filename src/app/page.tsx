@@ -11,11 +11,10 @@ export default function Home() {
               <div className="flex flex-col items-center space-y-4 text-center">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                    The modern tech stack for your next(.js) project
+                    Add your discord bot to sern's front page!
                   </h1>
                   <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                    stack is a comprehensive tech stack that includes everything you need to build and deploy your next
-                    web application.
+                    Do you want to show off your discord bot to the world? Add it to sern's front page!
                   </p>
                 </div>
                 <div className="space-x-4">
@@ -26,7 +25,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-900" id="features">
+          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-backgroundDarker" id="features">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
