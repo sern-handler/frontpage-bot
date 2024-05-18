@@ -28,7 +28,7 @@ export default function UserCard(props: Bot) {
                     <Link href={props.inviteLink} target="_blank">
                         <Button variant={'secondaryFilledLink'}>Invite</Button>
                     </Link>
-                    <Link href={`/dashboard/${props.id}`} target="_blank">
+                    <Link href={`/dashboard/${props.id}`}>
                         <Button>Settings</Button>
                     </Link>
                 </div>

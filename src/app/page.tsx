@@ -18,14 +18,14 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="space-x-4">
-                  <Link href="https://github.com/SrIzan10/stack">
+                  <Link href="/dashboard">
                     <Button>Start right NOW!</Button>
                   </Link>
                 </div>
               </div>
             </div>
           </section>
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-backgroundDarker" id="features">
+          {/* <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-background" id="features">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
@@ -96,7 +96,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
         </main>
       </>
   );

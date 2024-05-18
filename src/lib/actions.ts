@@ -53,13 +53,9 @@ export async function submitBotData(prev: any, formData: FormData): Promise<Defa
                 userId: user.id,
             },
         });
-        redirect('/dashboard')
     }
-
-    return {
-        success: true,
-        message: "Data submitted successfully",
-    };
+    
+    redirect('/dashboard')
 }
 
 interface DefaultActionResponse {
