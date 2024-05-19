@@ -35,7 +35,7 @@ function NavbarLinks() {
 }
 
 export default function Navbar() {
-  const { user } = useSession();
+  const { user, discord } = useSession();
   const [, logoutAction] = useFormState(logout, null)
   return (
     <>
@@ -54,8 +54,7 @@ export default function Navbar() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild className="cursor-pointer">
                 <Avatar>
-                  {/* TODO: Implement avatar system */}
-                  {/*<AvatarImage src={"https://srizan.dev/pfp.webp"} alt="@srizan" />*/}
+                  <AvatarImage src={`https://cdn.discordapp.com/avatars/${discord?.id}/${discord?.avatar}.webp`} alt={`@${user.username}`} />
                   <AvatarFallback>{user.username}</AvatarFallback>
                 </Avatar>
               </DropdownMenuTrigger>

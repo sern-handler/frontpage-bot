@@ -15,9 +15,8 @@ datasource db {
 
 model User {
   id              String    @id @default(cuid())
-  username        String    @unique
+  username        String
   discord_id      String    @unique
-  hashed_password String
   isAdmin         Boolean   @default(false)
   sessions        Session[]
   bots            Bot[]

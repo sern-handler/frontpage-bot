@@ -1,12 +1,14 @@
 // source: https://github.com/ugurkellecioglu/next-14-lucia-auth-postgresql-drizzle-typescript-example/blob/lucia-client-side/providers/Session.provider.tsx
 
 "use client"
+import { RESTGetAPIUserResult } from "discord-api-types/v10"
 import { Session, User } from "lucia"
 import { createContext, useContext } from "react"
 
 interface SessionProviderProps {
   user: User | null
   session: Session | null
+  discord: RESTGetAPIUserResult | null
 }
 
 const SessionContext = createContext<SessionProviderProps>(

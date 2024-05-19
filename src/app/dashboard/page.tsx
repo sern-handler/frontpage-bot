@@ -1,7 +1,11 @@
 import UserCard from "@/components/app/UserCard/UserCard";
 import { validateRequest } from "@/lib/auth";
 import prisma from "@/lib/db";
+import Image from "next/image";
+import NoBots from '../../../public/noBots.png'
 import { redirect } from "next/navigation";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default async function Page() {
     const { user } = await validateRequest()
@@ -17,6 +21,14 @@ export default async function Page() {
             {dbFetch.map((bot) => (
                 <UserCard key={bot.id} {...bot} />
             ))}
+            {dbFetch.length === 0 && (
+                <div className="flex items-center justify-center flex-col">
+                    <Image src={NoBots} alt="Megamind meme with a caption saying No bots?" />
+                    <Link href="/add">
+                        <Button className="mt-8">Create a bot</Button>
+                    </Link>
+                </div>
+            )}
         </div>
     )
 }
