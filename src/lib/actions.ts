@@ -28,7 +28,10 @@ export async function submitBotData(prev: any, formData: FormData): Promise<Defa
             where: {
                 id: parsedData.data.id,
             },
-            data: parsedData.data,
+            data: {
+                verified: false,
+                ...parsedData.data,
+            },
         });
     } else {
         const { name, botId, inviteLink, srcLink, description } = parsedData.data;
@@ -74,7 +77,6 @@ export async function handleBotVerificationSwitch(data: { id: string, verified: 
             error: `From ${parsedData.error.errors[0].path[0]}: ${parsedData.error.errors[0].message}`,
         };
     }
-    console.log(parsedData.data.id, parsedData.data.verified)
 
     const botUpdate = await prisma.bot.update({
         where: {

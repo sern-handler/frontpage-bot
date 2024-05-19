@@ -76,7 +76,7 @@ export default function BotForm(props: Props) {
                         <AlertTitle>Warning</AlertTitle>
                         <AlertDescription className="whitespace-pre-line">
                             When resubmitting, the bot will be unverified until the devteam verifies it again.{'\n'}
-                            This doesn't apply when it's just regenerating the profile picture
+                            This doesn't apply when regenerating the profile picture
                         </AlertDescription>
                     </Alert>
                 </div>
