@@ -39,7 +39,7 @@ export default function BotForm(props: Props) {
                             <Input name="botId" id="botId" required type="text" defaultValue={props?.botId} />
                         </div>
                         <div>
-                            <Label htmlFor="inviteLink">Invite link</Label>
+                            <Label htmlFor="inviteLink">Invite link (optional)</Label>
                             <Input name="inviteLink" id="inviteLink" type="text" defaultValue={props?.inviteLink} />
                         </div>
                         <div className="col-span-2">
