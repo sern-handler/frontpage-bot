@@ -6,7 +6,7 @@ import { nullsToUndefined } from "@/lib/utils";
 
 export default async function Page({ params }: { params: { id: string } }) {
     const { user } = await validateRequest()
-    if (!user) return redirect('/auth/signIn')
+    if (!user) return redirect('/auth/login')
     
     const dbFetch = await prisma.bot.findUnique({
         where: {

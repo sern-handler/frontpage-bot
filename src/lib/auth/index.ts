@@ -3,6 +3,7 @@ import { Lucia, Session, User } from "lucia";
 import prisma from "../db";
 import { cache } from "react";
 import { cookies } from "next/headers";
+import { Discord } from 'arctic'
 
 const adapter = new PrismaAdapter(prisma.session, prisma.user);
 
@@ -23,6 +24,9 @@ export const lucia = new Lucia(adapter, {
 		};
 	}
 });
+
+export const discord = new Discord(process.env.DSC_CLIENTID!, process.env.DSC_CLIENTSECRET!, process.env.NODE_ENV === "production" ? process.env.DSC_REDIRECTURI! : "http://localhost:3000/api/auth/discord/callback")
+
 export const validateRequest = cache(async () => {
 	const sessionId = cookies().get(lucia.sessionCookieName)?.value ?? null
   

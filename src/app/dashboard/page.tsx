@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 
 export default async function Page() {
     const { user } = await validateRequest()
-    if (!user) return redirect('/auth/signIn')
+    if (!user) return redirect('/auth/login')
     
     const dbFetch = await prisma.bot.findMany({
         where: {

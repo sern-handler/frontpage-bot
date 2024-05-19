@@ -80,7 +80,7 @@ export default function Navbar() {
             </DropdownMenu>
           </>
         ) : (
-          <Link href="/auth/signIn">
+          <Link href="/auth/login">
             <Button variant="outline">Sign in</Button>
           </Link>
         )}
