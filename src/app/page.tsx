@@ -19,7 +19,7 @@ export default function Home() {
                 </div>
                 <div className="space-x-4">
                   <Link href="/dashboard">
-                    <Button>Start right NOW!</Button>
+                    <Button>Let's go!</Button>
                   </Link>
                 </div>
               </div>

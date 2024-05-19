@@ -22,6 +22,8 @@
     --accent-foreground: 0 0% 100%;
     --destructive: 360 80.95% 45.49%;
     --destructive-foreground: 0 0% 100%;
+    --warning: 41deg, 86%, 83%;
+    --warning-foreground: 41deg, 86%, 83%;
     --ring: 342 59% 54%;
     --radius: 0.5rem;
   }
@@ -45,6 +47,8 @@
     --accent-foreground: 0 0% 100%;
     --destructive: 360 69.52% 39.02%;
     --destructive-foreground: 0 0% 100%;
+    --warning: 41deg, 86%, 83%;
+    --warning-foreground: 41deg, 86%, 83%;
     --ring: 342 59% 54%;
   }
 }

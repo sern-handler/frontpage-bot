@@ -17,6 +17,7 @@ model User {
   id              String    @id @default(cuid())
   username        String    @unique
   hashed_password String
+  isAdmin         Boolean   @default(false)
   sessions        Session[]
   bots            Bot[]
 }
@@ -36,8 +37,8 @@ model Bot {
   name        String
   description String
   verified    Boolean @default(false)
-  inviteLink  String
   pfpLink     String
+  inviteLink  String?
   srcLink     String?
   botId       String
 }

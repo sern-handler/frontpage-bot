@@ -3,13 +3,19 @@
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import SubmitButton from "../SubmitButton/SubmitButton";
-import { submitBotData } from "@/lib/actions";
+import { revalidatePathServer, submitBotData, updateBotProfilePicture } from "@/lib/actions";
 import { useFormState } from "react-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { AlertCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function BotForm(props: Props) {
+    const router = useRouter()
     const [submitData, submitDataAction] = useFormState(submitBotData, null);
+    const [regenLoading, setRegenLoading] = useState(false)
     useEffect(() => {
         if (submitData?.error) {
             toast.error(submitData.error)
@@ -34,15 +40,47 @@ export default function BotForm(props: Props) {
                         </div>
                         <div>
                             <Label htmlFor="inviteLink">Invite link</Label>
-                            <Input name="inviteLink" id="inviteLink" required type="text" defaultValue={props?.inviteLink} />
+                            <Input name="inviteLink" id="inviteLink" type="text" defaultValue={props?.inviteLink} />
                         </div>
                         <div className="col-span-2">
                             <Label htmlFor="srcLink">Repo link (optional)</Label>
                             <Input name="srcLink" id="srcLink" type="text" defaultValue={props?.srcLink || ''} />
                         </div>
                 </div>
-                <SubmitButton buttonText="Submit" />
+                <div className="flex items-center justify-center p-2 gap-2">
+                    {props.botId && (
+                        <Button variant="secondary" loading={regenLoading} type="button" onClick={() => {
+                            setRegenLoading(true)
+                            updateBotProfilePicture({ botId: props.botId! }).then((res) => {
+                                setRegenLoading(false)
+                                if (res.error) {
+                                    toast.error(res.error)
+                                }
+                                if (res.success) {
+                                    toast.success(res.message)
+                                    revalidatePathServer('/dashboard')
+                                    router.push('/dashboard')
+                                }
+                            })
+                        }}>
+                            Regenerate profile picture
+                        </Button>
+                    )}
+                    <SubmitButton buttonText="Submit" />
+                </div>
             </div>
+            {props.id && (
+                <div className="flex items-center justify-center p-2">
+                    <Alert variant={"warning"} className="w-[400px]">
+                        <AlertCircle className="h-4 w-4" />
+                        <AlertTitle>Warning</AlertTitle>
+                        <AlertDescription className="whitespace-pre-line">
+                            When resubmitting, the bot will be unverified until the devteam verifies it again.{'\n'}
+                            This doesn't apply when it's just regenerating the profile picture
+                        </AlertDescription>
+                    </Alert>
+                </div>
+            )}
         </form>
     )
 }

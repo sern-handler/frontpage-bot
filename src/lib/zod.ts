@@ -6,6 +6,11 @@ export const botSubmitSchema = z.object({
     name: z.string(),
     description: z.string(),
     botId: z.string(),
-    inviteLink: z.string(),
+    inviteLink: z.string().nullable().optional(),
     srcLink: z.string().nullable().optional()
+})
+
+export const botVerificationSwitchSchema = z.object({
+    id: z.string().min(1),
+    verified: z.boolean()
 })
