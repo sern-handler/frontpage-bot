@@ -63,11 +63,11 @@ export default function Navbar() {
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                   {user.isAdmin && (
-                    <DropdownMenuItem>
-                      <Link href="/admin">
+                    <Link href="/admin">
+                      <DropdownMenuItem>
                         Admin panel
-                      </Link>
-                    </DropdownMenuItem>
+                      </DropdownMenuItem>
+                    </Link>
                   )}
                   <DropdownMenuItem className="cursor-pointer" onClick={() => {
                     logoutAction()
