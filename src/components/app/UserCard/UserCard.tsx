@@ -1,7 +1,5 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
 import type { Bot } from "@prisma/client"
 import Link from "next/link"
 import VerifiedSwitch from "../VerifiedSwitch/VerifiedSwitch"
