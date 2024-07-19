@@ -24,7 +24,7 @@ export async function GET(req: Request) {
             verified: true
         }
     })
-    return new Response(JSON.stringify({ success: true, ...dbFetch }), {
+    return new Response(JSON.stringify(dbFetch), {
         headers: {
             'content-type': 'application/json'
         }
