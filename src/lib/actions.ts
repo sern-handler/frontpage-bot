@@ -86,9 +86,17 @@ export async function handleBotVerificationSwitch(data: { id: string, verified: 
             verified: parsedData.data.verified,
         },
     });
+
+    fetch('https://automata.sern.dev/web/updateWebsite', {
+        method: 'POST',
+        headers: {
+            'Authorization': process.env.UPDATEWEB_TOKEN!,
+        },
+    })
+
     return {
         success: true,
-        message: `Bot verification status for ${botUpdate.name} updated`,
+        message: `Bot verification status for ${botUpdate.name} updated, redeploying website...`,
     }
 }
 
