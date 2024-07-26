@@ -24,9 +24,22 @@ export async function GET(req: Request) {
             verified: true
         }
     })
-    return new Response(JSON.stringify(dbFetch), {
+    return new Response(JSON.stringify(emptyValToNull(dbFetch)), {
         headers: {
             'content-type': 'application/json'
         }
     })
+}
+
+function emptyValToNull(obj: any) {
+    for (const key in obj) {
+        if (typeof obj[key] === 'object') {
+            emptyValToNull(obj[key]);
+        } else {
+            if (obj[key] === '') {
+                obj[key] = null;
+            }
+        }
+    }
+    return obj;
 }
