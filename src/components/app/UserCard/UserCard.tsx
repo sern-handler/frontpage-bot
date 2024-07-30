@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import type { Bot } from "@prisma/client"
 import Link from "next/link"
 import VerifiedSwitch from "../VerifiedSwitch/VerifiedSwitch"
+import DeleteUser from "../DeleteUser/DeleteUser"
 
 export default function UserCard(props: Bot & { isAdminPanel?: boolean }) {
   const yes = <span className="text-green-500">Yes</span>
@@ -12,7 +13,7 @@ export default function UserCard(props: Bot & { isAdminPanel?: boolean }) {
       <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-4">
         <div className="flex items-center justify-center space-x-4">
           <Avatar className="w-14 h-14">
-            <AvatarImage src={props.pfpLink} alt="sernbot" />
+            <AvatarImage src={props.pfpLink} alt={props.name} />
           </Avatar>
           <h1 className="flex-grow text-center font-extrabold text-2xl">
             {props.name}
@@ -36,11 +37,9 @@ export default function UserCard(props: Bot & { isAdminPanel?: boolean }) {
           )}
           {props.isAdminPanel && <VerifiedSwitch id={props.id} verified={props.verified} />}
           {!props.isAdminPanel && (
-            <>
               <Link href={`/dashboard/${props.id}`}>
                 <Button>Settings</Button>
               </Link>
-            </>
           )}
         </div>
       </div>

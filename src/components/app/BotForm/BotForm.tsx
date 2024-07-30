@@ -11,6 +11,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import DeleteUser from "../DeleteUser/DeleteUser";
 
 export default function BotForm(props: Props) {
     const router = useRouter()
@@ -48,6 +49,7 @@ export default function BotForm(props: Props) {
                         </div>
                 </div>
                 <div className="flex items-center justify-center p-2 gap-2">
+                    <SubmitButton buttonText="Submit" />
                     {props.botId && (
                         <Button variant="secondary" loading={regenLoading} type="button" onClick={() => {
                             setRegenLoading(true)
@@ -66,7 +68,9 @@ export default function BotForm(props: Props) {
                             Regenerate profile picture
                         </Button>
                     )}
-                    <SubmitButton buttonText="Submit" />
+                    {props.botId && (
+                        <DeleteUser id={props.id!} name={props.name!} />
+                    )}
                 </div>
             </div>
             {props.id && (

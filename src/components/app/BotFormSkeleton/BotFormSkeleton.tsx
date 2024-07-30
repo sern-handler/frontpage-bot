@@ -27,8 +27,9 @@ export default function BotFormSkeleton() {
           </div>
         </div>
         <div className="flex items-center justify-center p-2 gap-2">
+          <Skeleton className="h-10 w-24" />
           <Skeleton className="h-10 w-48" />
-          <Skeleton className="h-10 w-20 ml-4" />
+          <Skeleton className="h-10 w-24" />
         </div>
       </div>
       <div className="flex items-center justify-center p-2">

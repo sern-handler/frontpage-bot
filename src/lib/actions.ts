@@ -142,6 +142,27 @@ export async function updateBotProfilePicture(data: { botId: string }): Promise<
   }
 }
 
+export async function deleteBot(data: { id: string }): Promise<DefaultActionResponse> {
+    const { user } = await validateRequest();
+    if (!user) {
+        return {
+            success: false,
+            error: "You must be logged in to perform this action",
+        };
+    }
+
+    await prisma.bot.delete({
+        where: {
+            id: data.id,
+        },
+    });
+
+    return {
+        success: true,
+        message: "Bot deleted",
+    };
+}
+
 export async function revalidatePathServer(path: string) {
     return revalidatePath(path)
 }
